@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QCG — Interface 001</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #0b0b0b;
+      color: #f2f2f2;
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 7vh 24px;
+    }
+
+    main {
+      width: min(820px, 100%);
+    }
+
+    header {
+      margin-bottom: 64px;
+    }
+
+    .logo {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 34px;
+}
+
+.logo svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.logo-circle {
+  fill: none;
+  stroke: #ff3b30;
+  stroke-width: 2;
+  transform-origin: 60px 60px;
+  animation: boundary-breathe 6s ease-in-out infinite;
+}
+
+@keyframes boundary-breathe {
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+.logo-course {
+  fill: none;
+  stroke: #ff3b30;
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 1;
+  transform-origin: 60px 60px;
+  animation: q-course 4s ease-in-out infinite;
+}
+
+@keyframes q-course {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-12px, -12px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.logo-centre {
+  fill: #ff3b30;
+  transform-origin: 60px 60px;
+  animation: centre-breathe 4s ease-in-out infinite;
+}
+
+@keyframes centre-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+}
+.logo-arrow {
+  fill: #ff3b30;
+  transform-origin: 60px 60px;
+  animation: q-course 4s ease-in-out infinite;
+}
+
+    .qcg {
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      letter-spacing: 0.08em;
+      margin: 0;
+    }
+
+    .name {
+      margin-top: 12px;
+      opacity: 0.62;
+      line-height: 1.6;
+    }
+
+    .command {
+      margin: 42px 0 20px;
+      font-size: 1rem;
+    }
+
+    .prompt {
+      color: #ff3b30;
+    }
+
+    section {
+      border-left: 1px solid rgba(255,255,255,0.18);
+      padding-left: 22px;
+      margin-bottom: 56px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      margin: 14px 0;
+      line-height: 1.5;
+    }
+
+    .label {
+      opacity: 0.45;
+    }
+
+    .value {
+      color: #fff;
+    }
+
+    .statement {
+      margin: 34px 0 0;
+      font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+      line-height: 1.55;
+    }
+
+    .lexicon {
+      display: grid;
+      gap: 30px;
+    }
+
+    .term {
+      cursor: default;
+    }
+
+    .term-name {
+      color: #ff3b30;
+      margin-bottom: 7px;
+    }
+
+    .term-question {
+      line-height: 1.55;
+    }
+
+    .human {
+      opacity: 0.45;
+      margin-top: 6px;
+      font-size: 0.88rem;
+    }
+
+    footer {
+      margin-top: 90px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      opacity: 0.42;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+ <header>
+
+  <div class="logo" aria-label="QCG">
+    <svg viewBox="0 0 120 120">
+
+      <circle
+        class="logo-circle"
+        cx="60"
+        cy="60"
+        r="48"
+      />
+
+ <line
+  class="logo-course"
+  x1="118"
+  y1="118"
+  x2="72"
+        <line
+        class="logo-course"
+        x1="118"
+        y1="118"
+        x2="72"
+        y2="72"
+        style="stroke: #ff3b30; stroke-width: 3; animation: q-course 4s ease-in-out infinite;"
+      />
+
+      <polygon
+        class="logo-arrow"
+        points="68,68 76,69 69,76"
+      />
+
+      <circle
+        class="logo-centre"
+        cx="60"
+        cy="60"
+        r="3"
+      />
+    </svg>
+  </div>
+
+  <h1 class="qcg">QCG</h1>
+
+  <div class="name">
+    Quantum Cybernetic Grand-strategy
+  </div>
+
+</header>
+
+    <div class="command">
+      <span class="prompt">QCG &gt;</span> status
+    </div>
+
+    <section>
+      <div class="row">
+        <div class="label">PURPOSE</div>
+        <div class="value">Quantum Cybernetic Grand-strategy</div>
+      </div>
+
+      <div class="row">
+        <div class="label">VISION</div>
+        <div class="value">Freedom</div>
+      </div>
+
+      <div class="row">
+        <div class="label">METHOD</div>
+        <div class="value">Align · Balance · Communicate</div>
+      </div>
+
+      <div class="row">
+        <div class="label">STATE</div>
+        <div class="value">Living · Learning · Changing</div>
+      </div>
+
+      <div class="row">
+        <div class="label">COURSE</div>
+        <div class="value">Adaptive</div>
+      </div>
+
+      <div class="statement">
+        Freedom is a constant state to chase.
+      </div>
+    </section>
+
+    <div class="command">
+      <span class="prompt">QCG &gt;</span> explore
+    </div>
+
+    <section class="lexicon">
+
+      <div class="term">
+        <div class="term-name">CHANGE</div>
+        <div class="term-question">Has the situation changed?</div>
+        <div class="human">Understand movement through past, present and future.</div>
+      </div>
+
+      <div class="term">
+        <div class="term-name">REALITY</div>
+        <div class="term-question">What is the situation?</div>
+        <div class="human">Context, time and perspective matter.</div>
+      </div>
+
+      <div class="term">
+        <div class="term-name">TRUTH</div>
+        <div class="term-question">
+          What is our most faithful understanding of reality presently available?
+        </div>
+        <div class="human">Known · Believed · Perceived · Inferred · Unknown</div>
+      </div>
+
+      <div class="term">
+        <div class="term-name">PURPOSE</div>
+        <div class="term-question">Does this serve our Purpose?</div>
+        <div class="human">Know what belongs — and what to omit.</div>
+      </div>
+
+      <div class="term">
+        <div class="term-name">FREEDOM</div>
+        <div class="term-question">In pursuit.</div>
+        <div class="human">Enduring Purpose · Living Vision · Adaptive Course</div>
+      </div>
+
+    </section>
+
+    <div class="command">
+      <span class="prompt">QCG &gt;</span> abc
+    </div>
+
+    <section>
+      <div class="row">
+        <div class="label">ALIGN</div>
+        <div class="value">Orient relationships coherently with Purpose.</div>
+      </div>
+
+      <div class="row">
+        <div class="label">BALANCE</div>
+        <div class="value">Navigate changing and competing forces while staying on course.</div>
+      </div>
+
+          <div class="row">
+        <div class="label">COMMUNICATE</div>
+        <div class="value">Understand the situation and its relationships.</div>
+      </div>
+    </section>
+
+    <footer>
+      Interface 001 · Laboratory<br>
+      A living expression of work in progress.
+    </footer>
+
+  </main>
+</body>
+</html>
